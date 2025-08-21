@@ -3,67 +3,10 @@
 @tailwind utilities;
 
 /* Global styles */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Global styles */
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f9f9fb;
-  color: #1a1a1a;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Utility classes */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 0;
-  text-align: center;
-  /* Hero section with a free technology image from Unsplash */
-  background-image: linear-gradient(135deg, rgba(63,81,181,0.8) 0%, rgba(33,150,243,0.8) 100%),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1650&q=80');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  max-width: 600px;
   @apply bg-background text-white font-sans antialiased;
 }
 
 .btn {
-  @apply inline-block px-4 py-2 rounded-md bg-secondary text-white font-semibold hover:bg-secondary/80 transition;
-}
-
   @apply inline-block px-4 py-2 rounded-md bg-secondary text-white font-semibold hover:bg-secondary/80 transition;
 }
