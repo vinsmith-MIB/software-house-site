@@ -11,7 +11,6 @@ export default function About() {
           content="Tim pengembang, desainer, dan engineer IT yang berfokus pada pengalaman digital generasi berikutnya."
         />
       </Head>
-<<<<<<< HEAD
       <section style={{ padding: '4rem 0' }}>
         <h1 style={{ textAlign: 'center', marginBottom: '1rem' }}>About Us</h1>
         <p style={{ maxWidth: '800px', margin: '0 auto 2rem auto', lineHeight: '1.6' }}>
@@ -41,13 +40,6 @@ export default function About() {
           managers who are passionate about building software that solves real
           problems. We stay up‑to‑date with industry trends and technologies
           so that our clients always benefit from the latest innovations.
-=======
-      <section className="py-20">
-        <h1 className="text-center text-3xl font-semibold mb-8">Siapa Kami</h1>
-        <p className="max-w-3xl mx-auto text-center text-lg text-primary mb-8">
-          Tim pengembang, desainer, dan engineer IT yang berfokus pada pembuatan
-          pengalaman digital generasi berikutnya.
->>>>>>> 474b6b0f45826618bd6a9b7d878f3880cb5c295d
         </p>
         <img
           src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1350&q=80"
