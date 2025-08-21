@@ -1,15 +1,10 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 
-/**
- * Portfolio page. Highlights selected projects with descriptions. Use this
- * page to showcase your best work and provide links to case studies or live
- * demos if applicable. The sample projects below are placeholders—replace
- * them with your actual portfolio items.
- */
 export default function Portfolio() {
   const projects = [
     {
+<<<<<<< HEAD
       name: 'Healthcare Booking App',
       description:
         'A cross‑platform mobile and web application that allows patients to schedule appointments, receive reminders and consult doctors via video call.',
@@ -36,40 +31,60 @@ export default function Portfolio() {
         'A scalable e‑commerce solution with customizable storefronts, payment gateway integrations and order fulfillment automation.',
       image:
         'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1350&q=80',
+=======
+      title: 'Platform E-commerce',
+      tag: 'Web App',
+      image:
+        'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1350&q=80',
+    },
+    {
+      title: 'Sistem Kesehatan AI',
+      tag: 'AI Solution',
+      image:
+        'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1350&q=80',
+    },
+    {
+      title: 'Dashboard Cloud',
+      tag: 'DevOps',
+      image:
+        'https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1350&q=80',
+>>>>>>> 474b6b0f45826618bd6a9b7d878f3880cb5c295d
     },
   ];
   return (
     <Layout>
       <Head>
-        <title>Portfolio – SoftWareHouse</title>
-        <meta name="description" content="Explore the projects developed by SoftWareHouse." />
+        <title>Portofolio – SoftWareHouse</title>
+        <meta
+          name="description"
+          content="Contoh proyek unggulan yang telah kami kerjakan."
+        />
       </Head>
-      <section style={{ padding: '4rem 0' }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Portfolio</h1>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '2rem',
-          }}
-        >
+      <section className="py-20">
+        <h1 className="text-center text-3xl font-semibold mb-12">Portofolio</h1>
+        <div className="grid gap-8 md:grid-cols-3">
           {projects.map((project) => (
             <div
-              key={project.name}
-              style={{
-                backgroundColor: '#ffffff',
-                padding: '1.5rem',
-                borderRadius: '8px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-              }}
+              key={project.title}
+              className="border border-accent/20 rounded-lg overflow-hidden bg-background/60"
             >
               <img
                 src={project.image}
+<<<<<<< HEAD
                 alt={project.name}
                 style={{ width: '100%', borderRadius: '4px', marginBottom: '1rem' }}
               />
               <h3>{project.name}</h3>
               <p style={{ lineHeight: '1.5' }}>{project.description}</p>
+=======
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <span className="text-sm text-accent">{project.tag}</span>
+                <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
+              </div>
+>>>>>>> 474b6b0f45826618bd6a9b7d878f3880cb5c295d
             </div>
           ))}
         </div>

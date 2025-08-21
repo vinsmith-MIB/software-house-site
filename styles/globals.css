@@ -1,12 +1,10 @@
-/*
- * Global stylesheet for the software house company profile site.
- * These styles set up the base typography, colors and layout for the
- * application. You can extend or override these rules in individual
- * components if necessary.
- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html,
+/* Global styles */
 body {
+<<<<<<< HEAD
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -56,80 +54,11 @@ a {
   margin-bottom: 2rem;
   line-height: 1.5;
   max-width: 600px;
+=======
+  @apply bg-background text-white font-sans antialiased;
+>>>>>>> 474b6b0f45826618bd6a9b7d878f3880cb5c295d
 }
 
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #ff5722;
-  color: #fff;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background-color 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #e64a19;
-}
-
-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
-}
-
-.nav .logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #3f51b5;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.nav li a {
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-
-.nav li a:hover {
-  background-color: #f2f2f2;
-}
-
-footer {
-  background-color: #212121;
-  color: #fff;
-  padding: 2rem 0;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-footer p {
-  margin: 0.5rem 0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .nav ul {
-    display: none;
-  }
+  @apply inline-block px-4 py-2 rounded-md bg-secondary text-white font-semibold hover:bg-secondary/80 transition;
 }
