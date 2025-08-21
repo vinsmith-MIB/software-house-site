@@ -1,71 +1,80 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+import { useEffect, useRef } from 'react';
+import {
+  CodeBracketIcon,
+  CloudIcon,
+  DevicePhoneMobileIcon,
+  CpuChipIcon,
+} from '@heroicons/react/24/outline';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-/**
- * Services page. Lists the core offerings of the software house with a brief
- * description for each. Use this page to convince potential clients you
- * have the expertise they need.
- */
 export default function Services() {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    cardRefs.current.forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+        },
+      });
+    });
+  }, []);
+
   const services = [
     {
-      title: 'Custom Software Development',
+      title: 'Pengembangan Web',
       description:
-        'Tailored solutions crafted to meet specific business requirements. Our team builds scalable and secure systems using modern technologies.',
-    },
-    {
-      title: 'Web Application Development',
-      description:
-        'Responsive, accessible, and high‑performance web applications for all platforms. We specialize in React, Node.js and cloud‑native architectures.',
-    },
-    {
-      title: 'Mobile App Development',
-      description:
-        'Native and cross‑platform mobile apps that provide seamless user experiences and integrate with existing systems.',
-    },
-    {
-      title: 'UI/UX Design',
-      description:
-        'Intuitive and engaging interfaces designed with the user in mind. Our process covers research, wireframes, prototypes and final UI assets.',
+        'Aplikasi Next.js, React, dan Node.js berskala enterprise.',
+      Icon: CodeBracketIcon,
     },
     {
       title: 'Cloud & DevOps',
       description:
-        'Cloud migration, infrastructure setup and continuous deployment pipelines. We help you leverage AWS, Azure or GCP effectively.',
+        'Pipeline CI/CD, Kubernetes, dan solusi serverless.',
+      Icon: CloudIcon,
     },
     {
-      title: 'Maintenance & Support',
+      title: 'Aplikasi Mobile',
       description:
-        'Ongoing support to ensure your software remains reliable, secure and up‑to‑date. We offer service level agreements tailored to your needs.',
+        'Pengembangan lintas platform dengan React Native & Flutter.',
+      Icon: DevicePhoneMobileIcon,
+    },
+    {
+      title: 'AI & Data',
+      description:
+        'Model machine learning dan dashboard berbasis data.',
+      Icon: CpuChipIcon,
     },
   ];
   return (
     <Layout>
       <Head>
-        <title>Services – SoftWareHouse</title>
-        <meta name="description" content="Discover the software development services offered by SoftWareHouse." />
+        <title>Layanan – SoftWareHouse</title>
+        <meta
+          name="description"
+          content="Layanan pengembangan perangkat lunak modern dari SoftWareHouse."
+        />
       </Head>
-      <section style={{ padding: '4rem 0' }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Services</h1>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '2rem',
-          }}
-        >
-          {services.map((service) => (
+      <section className="py-20">
+        <h1 className="text-center text-3xl font-semibold mb-12">Layanan Kami</h1>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {services.map(({ title, description, Icon }, i) => (
             <div
-              key={service.title}
-              style={{
-                backgroundColor: '#ffffff',
-                padding: '1.5rem',
-                borderRadius: '8px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-              }}
+              key={title}
+              ref={(el) => (cardRefs.current[i] = el)}
+              className="p-8 border border-accent/20 rounded-lg bg-background/60 shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
             >
-              <h3>{service.title}</h3>
-              <p style={{ lineHeight: '1.5' }}>{service.description}</p>
+              <Icon className="h-10 w-10 text-accent mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{title}</h3>
+              <p className="text-primary">{description}</p>
             </div>
           ))}
         </div>

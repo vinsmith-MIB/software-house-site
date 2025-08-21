@@ -1,23 +1,23 @@
-/**
- * Footer component. Displays basic contact information and copyright text.
- * This footer appears at the bottom of every page thanks to the Layout
- * component. Feel free to customize the content to reflect your own
- * software house's details or branding.
- */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer>
-      <p>© {currentYear} SoftWareHouse. All rights reserved.</p>
-      <p>
-        Follow us on
-        {' '}
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: '#90caf9' }}>
+    <footer className="mt-20 border-t border-accent/30 bg-background text-center py-6">
+      <p className="text-sm">© {currentYear} SoftWareHouse. All rights reserved.</p>
+      <p className="mt-2 space-x-4">
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-accent"
+        >
           LinkedIn
         </a>
-        {' '}|{
-        ' '}
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" style={{ color: '#90caf9' }}>
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:text-accent"
+        >
           Twitter
         </a>
       </p>
