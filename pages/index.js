@@ -1,102 +1,95 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
+import {
+  CodeBracketIcon,
+  CloudIcon,
+  DevicePhoneMobileIcon,
+  CpuChipIcon,
+} from '@heroicons/react/24/outline';
 
-/**
- * Home page of the software house company profile site. Presents a hero
- * section with a strong value proposition, summaries of services, and
- * highlights of portfolio projects. Each section encourages visitors to
- * explore deeper into the site or contact the company.
- */
 export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>SoftWareHouse – Innovative Software Solutions</title>
+        <title>SoftWareHouse – Membangun Masa Depan Teknologi</title>
         <meta
           name="description"
-          content="SoftWareHouse provides bespoke software solutions including web apps, mobile apps, and cloud systems."
+          content="Kami membuat solusi digital yang scalable dengan teknologi terbaru."
         />
       </Head>
-      <section className="hero">
-        <h1>Innovative Software Solutions</h1>
-        <p>
-          Empowering businesses through custom software development, mobile
-          applications, and digital transformation. We build reliable and
-          scalable solutions tailored to your needs.
+
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center text-center py-32 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1650&q=80"
+          alt="Futuristic technology"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/90" />
+        <h1 className="relative text-4xl md:text-6xl font-bold">Membangun Masa Depan Teknologi</h1>
+        <p className="relative mt-4 max-w-2xl text-lg text-primary">
+          Kami membuat solusi digital yang scalable dengan teknologi terbaru.
         </p>
-        <Link href="/contact" className="btn">
-          Get in Touch
-        </Link>
-      </section>
-      <section style={{ padding: '4rem 0' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Our Services</h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '2rem',
-          }}
-        >
-          <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3>Custom Software Development</h3>
-            <p>
-              We design and build bespoke solutions that solve your business
-              challenges and streamline operations.
-            </p>
-          </div>
-          <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3>Web & Mobile Applications</h3>
-            <p>
-              Our experts craft responsive web apps and native mobile apps
-              delivering seamless user experiences across devices.
-            </p>
-          </div>
-          <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3>Cloud & DevOps</h3>
-            <p>
-              We leverage cloud platforms and DevOps best practices to deploy
-              secure, scalable and maintainable systems.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section style={{ padding: '4rem 0', backgroundColor: '#f0f4ff' }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Featured Projects</h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '2rem',
-          }}
-        >
-          <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3>Project A</h3>
-            <p>
-              A cross‑platform mobile application that simplifies booking
-              appointments for healthcare providers.
-            </p>
-          </div>
-          <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3>Project B</h3>
-            <p>
-              A cloud‑based inventory management system that integrates with
-              existing ERPs and scales with your business.
-            </p>
-          </div>
-          <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-            <h3>Project C</h3>
-            <p>
-              An AI‑powered analytics dashboard providing real‑time insights
-              through intuitive visualizations.
-            </p>
-          </div>
-        </div>
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-          <Link href="/portfolio" className="btn">
-            See More
+        <div className="relative mt-8 flex gap-4">
+          <Link href="/contact" className="btn bg-primary hover:bg-primary/80">
+            Mulai Proyek
+          </Link>
+          <Link href="/services" className="btn bg-secondary hover:bg-secondary/80">
+            Lihat Layanan
           </Link>
         </div>
+      </section>
+
+      {/* Clients Section */}
+      <section className="py-20">
+        <h2 className="text-center text-2xl font-semibold mb-8 text-primary">
+          Dipercaya Perusahaan Ternama
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
+          {[1, 2, 3, 4].map((i) => (
+            <img
+              key={i}
+              src={`https://dummyimage.com/160x80/1e293b/ffffff&text=Logo+${i}`}
+              alt={`Client ${i}`}
+              className="grayscale hover:grayscale-0 transition"
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Services Summary Section */}
+      <section className="py-20">
+        <h2 className="text-center text-3xl font-semibold mb-12">Layanan Kami</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
+            <CodeBracketIcon className="h-10 w-10 mx-auto text-accent" />
+            <h3 className="mt-4 font-semibold">
+              Pengembangan Software Kustom
+            </h3>
+          </div>
+          <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
+            <CloudIcon className="h-10 w-10 mx-auto text-accent" />
+            <h3 className="mt-4 font-semibold">Cloud & DevOps</h3>
+          </div>
+          <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
+            <DevicePhoneMobileIcon className="h-10 w-10 mx-auto text-accent" />
+            <h3 className="mt-4 font-semibold">Aplikasi Mobile</h3>
+          </div>
+          <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
+            <CpuChipIcon className="h-10 w-10 mx-auto text-accent" />
+            <h3 className="mt-4 font-semibold">AI & Solusi Data</h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Highlight Section */}
+      <section className="py-20 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Inovasi Utama</h2>
+        <p className="text-primary text-lg mb-6">
+          10+ tahun memberikan solusi IT untuk startup dan perusahaan global.
+        </p>
+        <div className="text-5xl font-bold text-accent animate-pulse">10+</div>
       </section>
     </Layout>
   );
