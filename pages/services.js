@@ -1,5 +1,8 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import {
   CodeBracketIcon,
   CloudIcon,
@@ -63,9 +66,10 @@ export default function Services() {
       <section className="py-20">
         <h1 className="text-center text-3xl font-semibold mb-12">Layanan Kami</h1>
         <div className="grid gap-8 sm:grid-cols-2">
-          {services.map(({ title, description, Icon }) => (
+          {services.map(({ title, description, Icon }, i) => (
             <div
               key={title}
+              ref={(el) => (cardRefs.current[i] = el)}
               className="p-8 border border-accent/20 rounded-lg bg-background/60"
             >
               <Icon className="h-10 w-10 text-accent mb-4" />
