@@ -24,6 +24,12 @@ export default function About() {
           closely with our clients to understand their unique challenges and
           craft software that makes a difference.
         </p>
+        {/* Free team collaboration image from Unsplash */}
+        <img
+          src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1350&q=80"
+          alt="Team collaborating in modern office"
+          style={{ width: '100%', borderRadius: '8px', margin: '2rem 0' }}
+        />
         <h2 style={{ marginTop: '3rem' }}>Our Values</h2>
         <ul style={{ listStyle: 'circle', paddingLeft: '2rem', lineHeight: '1.8' }}>
           <li><strong>Innovation:</strong> We embrace new technologies and creative thinking to build better products.</li>
