@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 /* Global styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
 body {
   padding: 0;
   margin: 0;
@@ -35,7 +40,11 @@ a {
   justify-content: center;
   padding: 4rem 0;
   text-align: center;
-  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%);
+  /* Hero section with a free technology image from Unsplash */
+  background-image: linear-gradient(135deg, rgba(63,81,181,0.8) 0%, rgba(33,150,243,0.8) 100%),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1650&q=80');
+  background-size: cover;
+  background-position: center;
   color: #fff;
 }
 
@@ -49,8 +58,12 @@ a {
   margin-bottom: 2rem;
   line-height: 1.5;
   max-width: 600px;
+  @apply bg-background text-white font-sans antialiased;
 }
 
 .btn {
+  @apply inline-block px-4 py-2 rounded-md bg-secondary text-white font-semibold hover:bg-secondary/80 transition;
+}
+
   @apply inline-block px-4 py-2 rounded-md bg-secondary text-white font-semibold hover:bg-secondary/80 transition;
 }
