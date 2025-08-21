@@ -35,11 +35,7 @@ a {
   justify-content: center;
   padding: 4rem 0;
   text-align: center;
-  /* Hero section with a free technology image from Unsplash */
-  background-image: linear-gradient(135deg, rgba(63,81,181,0.8) 0%, rgba(33,150,243,0.8) 100%),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1650&q=80');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%);
   color: #fff;
 }
 

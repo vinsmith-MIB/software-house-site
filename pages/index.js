@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import Layout from '@/components/Layout';
 import {
   CodeBracketIcon,
@@ -7,8 +8,38 @@ import {
   DevicePhoneMobileIcon,
   CpuChipIcon,
 } from '@heroicons/react/24/outline';
+<<<<<<< HEAD
+=======
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
 
 export default function Home() {
+  const heroRef = useRef(null);
+  const servicesRef = useRef([]);
+
+  useEffect(() => {
+    gsap.from(heroRef.current.children, {
+      opacity: 0,
+      y: 40,
+      duration: 1,
+      stagger: 0.2,
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+    servicesRef.current.forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 80%',
+        },
+      });
+    });
+  }, []);
+
   return (
     <Layout>
       <Head>
@@ -20,7 +51,14 @@ export default function Home() {
       </Head>
 
       {/* Hero Section */}
+<<<<<<< HEAD
       <section className="relative flex flex-col items-center justify-center text-center py-32 overflow-hidden">
+=======
+      <section
+        ref={heroRef}
+        className="relative flex flex-col items-center justify-center text-center py-32 overflow-hidden"
+      >
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
         <img
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1650&q=80"
           alt="Futuristic technology"
@@ -62,12 +100,20 @@ export default function Home() {
       <section className="py-20">
         <h2 className="text-center text-3xl font-semibold mb-12">Layanan Kami</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+<<<<<<< HEAD
           <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
+=======
+          <div
+            ref={(el) => (servicesRef.current[0] = el)}
+            className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
+          >
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
             <CodeBracketIcon className="h-10 w-10 mx-auto text-accent" />
             <h3 className="mt-4 font-semibold">
               Pengembangan Software Kustom
             </h3>
           </div>
+<<<<<<< HEAD
           <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
             <CloudIcon className="h-10 w-10 mx-auto text-accent" />
             <h3 className="mt-4 font-semibold">Cloud & DevOps</h3>
@@ -77,6 +123,26 @@ export default function Home() {
             <h3 className="mt-4 font-semibold">Aplikasi Mobile</h3>
           </div>
           <div className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center">
+=======
+          <div
+            ref={(el) => (servicesRef.current[1] = el)}
+            className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
+          >
+            <CloudIcon className="h-10 w-10 mx-auto text-accent" />
+            <h3 className="mt-4 font-semibold">Cloud & DevOps</h3>
+          </div>
+          <div
+            ref={(el) => (servicesRef.current[2] = el)}
+            className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
+          >
+            <DevicePhoneMobileIcon className="h-10 w-10 mx-auto text-accent" />
+            <h3 className="mt-4 font-semibold">Aplikasi Mobile</h3>
+          </div>
+          <div
+            ref={(el) => (servicesRef.current[3] = el)}
+            className="p-6 rounded-lg bg-background/60 border border-accent/20 text-center shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
+          >
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
             <CpuChipIcon className="h-10 w-10 mx-auto text-accent" />
             <h3 className="mt-4 font-semibold">AI & Solusi Data</h3>
           </div>

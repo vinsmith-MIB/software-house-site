@@ -1,13 +1,39 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+<<<<<<< HEAD
+=======
+import { useEffect, useRef } from 'react';
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
 import {
   CodeBracketIcon,
   CloudIcon,
   DevicePhoneMobileIcon,
   CpuChipIcon,
 } from '@heroicons/react/24/outline';
+<<<<<<< HEAD
+=======
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
 
 export default function Services() {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    cardRefs.current.forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+        },
+      });
+    });
+  }, []);
+
   const services = [
     {
       title: 'Pengembangan Web',
@@ -46,10 +72,18 @@ export default function Services() {
       <section className="py-20">
         <h1 className="text-center text-3xl font-semibold mb-12">Layanan Kami</h1>
         <div className="grid gap-8 sm:grid-cols-2">
+<<<<<<< HEAD
           {services.map(({ title, description, Icon }) => (
             <div
               key={title}
               className="p-8 border border-accent/20 rounded-lg bg-background/60"
+=======
+          {services.map(({ title, description, Icon }, i) => (
+            <div
+              key={title}
+              ref={(el) => (cardRefs.current[i] = el)}
+              className="p-8 border border-accent/20 rounded-lg bg-background/60 shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
             >
               <Icon className="h-10 w-10 text-accent mb-4" />
               <h3 className="text-xl font-semibold mb-2">{title}</h3>

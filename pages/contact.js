@@ -1,11 +1,17 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout';
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
 
 export default function Contact() {
   function handleSubmit(e) {
     e.preventDefault();
     alert('Thank you for reaching out! We will get back to you soon.');
   }
+
+  useEffect(() => {
+    gsap.from('.contact-form', { opacity: 0, y: 40, duration: 1 });
+  }, []);
   return (
     <Layout>
       <Head>
@@ -21,7 +27,11 @@ export default function Contact() {
         </h1>
         <form
           onSubmit={handleSubmit}
+<<<<<<< HEAD
           className="max-w-xl mx-auto grid gap-4"
+=======
+          className="contact-form max-w-xl mx-auto grid gap-4"
+>>>>>>> 984b407df142c2bd591a2404d67281c3d192c89e
         >
           {['Nama', 'Email', 'Perusahaan'].map((field) => (
             <input
