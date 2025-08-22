@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import {
   CodeBracketIcon,
   CloudIcon,
   DevicePhoneMobileIcon,
   CpuChipIcon,
 } from '@heroicons/react/24/outline';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function Services() {
   const cardRefs = useRef([]);
@@ -70,7 +70,7 @@ export default function Services() {
             <div
               key={title}
               ref={(el) => (cardRefs.current[i] = el)}
-              className="p-8 border border-accent/20 rounded-lg bg-background/60"
+              className="p-8 border border-accent/20 rounded-lg bg-background/60 shadow-lg hover:shadow-accent/40 transition transform hover:-translate-y-1"
             >
               <Icon className="h-10 w-10 text-accent mb-4" />
               <h3 className="text-xl font-semibold mb-2">{title}</h3>

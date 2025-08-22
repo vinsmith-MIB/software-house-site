@@ -8,7 +8,7 @@ import {
   DevicePhoneMobileIcon,
   CpuChipIcon,
 } from '@heroicons/react/24/outline';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function Home() {

@@ -27,7 +27,7 @@ export default function Contact() {
         </h1>
         <form
           onSubmit={handleSubmit}
-          className="max-w-xl mx-auto grid gap-4"
+          className="contact-form max-w-xl mx-auto grid gap-4"
         >
           {['Nama', 'Email', 'Perusahaan'].map((field) => (
             <input
